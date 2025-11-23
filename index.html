@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laliegh Grace Borres — Portfolio</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- shadcn/ui CDN (Unofficial Prebuilt Web Components) -->
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/shadcn-ui@0.3.0/dist/web-components.min.js"
+    ></script>
+
+    <!-- Framer Motion CDN -->
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.umd.js"></script>
+
+    <style>
+      /* glass + smooth aesthetic */
+      .glass {
+        backdrop-filter: blur(16px);
+        background: rgba(255, 255, 255, 0.1);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-br from-indigo-200 via-purple-200 to-pink-200 min-h-screen font-sans"
+  >
+    <!-- NAVBAR -->
+    <nav class="w-full p-6 flex justify-between items-center">
+      <h1 class="text-2xl font-bold tracking-wide">
+        Laliegh <span class="text-purple-700">Grace</span> Borres
+      </h1>
+      <button
+        id="themeToggle"
+        class="px-4 py-2 rounded-full glass text-sm border border-white/40"
+      >
+        Toggle Theme
+      </button>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="container mx-auto px-6 py-12 text-center">
+      <div
+        id="hero"
+        class="mx-auto max-w-2xl p-10 rounded-2xl glass border border-white/30 shadow-2xl"
+      >
+        <h2 class="text-4xl font-extrabold text-purple-900 drop-shadow-md">
+          Welcome to my Portfolio
+        </h2>
+        <p class="mt-4 text-slate-700">
+          Reader • Wattpad lover • Movie fan • Creative spirit
+        </p>
+        <p class="mt-2 text-slate-700">
+          I’m Laliegh Grace Borres, and this is my personal modern aesthetic
+          portfolio.
+        </p>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="container mx-auto px-6 py-10 grid md:grid-cols-2 gap-6">
+      <div class="glass border border-white/30 p-8 rounded-2xl shadow-xl">
+        <h3 class="text-2xl font-bold text-purple-900">About Me</h3>
+        <p class="mt-4 text-slate-800 leading-relaxed">
+          I'm 21 years old and passionate about technology, creativity, and
+          continuous learning. I enjoy reading Wattpad stories, learning new
+          skills, jogging, and watching movies. I also have experience in CCNA
+          and programming, and I love experimenting with aesthetic designs and
+          smooth animations.
+        </p>
+      </div>
+
+      <div class="glass border border-white/30 p-8 rounded-2xl shadow-xl">
+        <h3 class="text-2xl font-bold text-purple-900">Hobbies</h3>
+        <ul class="mt-4 space-y-2 text-slate-800">
+          <li>📚 Reading Wattpad</li>
+          <li>💡 Learning new skills</li>
+          <li>🏃 Jogging</li>
+          <li>🎬 Watching movies</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="container mx-auto px-6 py-10">
+      <h3 class="text-3xl font-bold text-purple-900 text-center">Skills</h3>
+      <div class="mt-6 flex flex-wrap justify-center gap-3">
+        <span class="px-4 py-2 bg-white/50 rounded-full text-sm">HTML</span>
+        <span class="px-4 py-2 bg-white/50 rounded-full text-sm"
+          >CSS / Tailwind</span
+        >
+        <span class="px-4 py-2 bg-white/50 rounded-full text-sm"
+          >JavaScript</span
+        >
+        <span class="px-4 py-2 bg-white/50 rounded-full text-sm">CCNA</span>
+        <span class="px-4 py-2 bg-white/50 rounded-full text-sm"
+          >Programming</span
+        >
+        <span class="px-4 py-2 bg-white/50 rounded-full text-sm"
+          >UI Layout</span
+        >
+        <span class="px-4 py-2 bg-white/50 rounded-full text-sm"
+          >Creative Design</span
+        >
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="container mx-auto px-6 py-14 max-w-lg">
+      <div class="glass border border-white/30 p-8 rounded-2xl shadow-xl">
+        <h3 class="text-2xl font-bold text-purple-900 text-center mb-4">
+          Contact Me
+        </h3>
+
+        <form id="contactForm" class="space-y-4">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            class="w-full p-3 rounded-xl border border-white/40 glass"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            class="w-full p-3 rounded-xl border border-white/40 glass"
+          />
+          <textarea
+            name="message"
+            placeholder="Message"
+            rows="4"
+            class="w-full p-3 rounded-xl border border-white/40 glass"
+          ></textarea>
+          <button
+            class="w-full py-3 bg-purple-600 text-white rounded-xl font-semibold shadow-lg hover:bg-purple-700"
+          >
+            Send
+          </button>
+        </form>
+
+        <div class="mt-6 text-center text-sm text-slate-700">
+          <p>Sample contacts:</p>
+          <p>Email: hello@example.com</p>
+          <p>Twitter: @laliegh_sample</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Framer Motion Animation
+      const { animate } = window.framerMotion;
+      animate(
+        '#hero',
+        { y: [-20, 0], opacity: [0, 1] },
+        { duration: 1, easing: 'easeOut' },
+      );
+
+      // Dark mode toggle
+      const toggle = document.getElementById('themeToggle');
+      toggle.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        document.body.classList.toggle('bg-gray-900');
+      });
+
+      // Contact Form
+      document.getElementById('contactForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const message = e.target.message.value;
+        const mail = `mailto:hello@example.com?subject=Message from ${name}&body=${encodeURIComponent(
+          message + '\nEmail: ' + email,
+        )}`;
+        window.location.href = mail;
+      });
+    </script>
+  </body>
+</html>
